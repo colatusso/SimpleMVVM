@@ -14,6 +14,8 @@
 		5311BA301B0A4B44000F39D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5311BA2F1B0A4B44000F39D0 /* Images.xcassets */; };
 		5311BA331B0A4B44000F39D0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5311BA311B0A4B44000F39D0 /* LaunchScreen.xib */; };
 		5311BA3F1B0A4B44000F39D0 /* SimpleMVVMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5311BA3E1B0A4B44000F39D0 /* SimpleMVVMTests.m */; };
+		5311BA4C1B0A4B61000F39D0 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 5311BA491B0A4B61000F39D0 /* Model.m */; };
+		5311BA4D1B0A4B61000F39D0 /* ViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5311BA4B1B0A4B61000F39D0 /* ViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		5311BA381B0A4B44000F39D0 /* SimpleMVVMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleMVVMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5311BA3D1B0A4B44000F39D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5311BA3E1B0A4B44000F39D0 /* SimpleMVVMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SimpleMVVMTests.m; sourceTree = "<group>"; };
+		5311BA481B0A4B61000F39D0 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		5311BA491B0A4B61000F39D0 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		5311BA4A1B0A4B61000F39D0 /* ViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewModel.h; sourceTree = "<group>"; };
+		5311BA4B1B0A4B61000F39D0 /* ViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,10 @@
 				5311BA271B0A4B44000F39D0 /* AppDelegate.m */,
 				5311BA291B0A4B44000F39D0 /* ViewController.h */,
 				5311BA2A1B0A4B44000F39D0 /* ViewController.m */,
+				5311BA481B0A4B61000F39D0 /* Model.h */,
+				5311BA491B0A4B61000F39D0 /* Model.m */,
+				5311BA4A1B0A4B61000F39D0 /* ViewModel.h */,
+				5311BA4B1B0A4B61000F39D0 /* ViewModel.m */,
 				5311BA2C1B0A4B44000F39D0 /* Main.storyboard */,
 				5311BA2F1B0A4B44000F39D0 /* Images.xcassets */,
 				5311BA311B0A4B44000F39D0 /* LaunchScreen.xib */,
@@ -221,7 +231,9 @@
 			files = (
 				5311BA2B1B0A4B44000F39D0 /* ViewController.m in Sources */,
 				5311BA281B0A4B44000F39D0 /* AppDelegate.m in Sources */,
+				5311BA4D1B0A4B61000F39D0 /* ViewModel.m in Sources */,
 				5311BA251B0A4B44000F39D0 /* main.m in Sources */,
+				5311BA4C1B0A4B61000F39D0 /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
