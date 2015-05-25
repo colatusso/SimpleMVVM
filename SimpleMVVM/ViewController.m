@@ -22,13 +22,19 @@
     [super viewDidLoad];
     
     // shared ViewModel instance intialization
+    // without KVC/KVO (first commit) the data would have been loaded inside the ViewModel class
     self.viewModel = [ViewModel sharedInstanceWithViewController:self];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    // observing the property via ViewModel
+    // observing the property for changes
     [self.viewModel.model addObserver:self forKeyPath:@"dataArray" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    // removing the observer
+    [self.viewModel.model removeObserver:self forKeyPath:@"dataArray"];
 }
 
 #pragma mark - tableview controller

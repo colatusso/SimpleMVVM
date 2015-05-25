@@ -12,6 +12,7 @@
 
 + (id)sharedInstance;
 - (void)loadData;
+- (void)setNewData;
 
 @property (strong, nonatomic) NSArray *dataArray;
 

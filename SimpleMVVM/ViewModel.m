@@ -11,8 +11,6 @@
 
 @interface ViewModel ()
 
-
-
 @end
 
 @implementation ViewModel
@@ -36,8 +34,18 @@
     if (self) {
         self.viewController = viewController;
         
-        // shared instance of the model
+        /*
+           normally you would set the initial data here, but since I added KVC/KVO NSKeyValueObservingOptionInitial there is no need for this, but it would be like:
+           self.viewController.data = [self.model methodThatReturnsData]; 
+        */
+        
+        // shared instance of the model, the data is lodaded inside the class initialization
         self.model = [Model sharedInstance];
+        
+        // setting new values after 3 seconds, just for the sake of this example! Observed with NSKeyValueObservingOptionNew
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self.model setNewData];
+        });
     }
     
     return self;
