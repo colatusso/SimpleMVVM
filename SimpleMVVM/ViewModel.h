@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
+#import "Model.h"
 
 @class UIViewController;
 
 @interface ViewModel : NSObject
 
 + (id)sharedInstanceWithViewController:(ViewController *)viewController;
+@property (strong, nonatomic) ViewController *viewController;
+@property (strong, nonatomic) Model *model;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "ViewModel.h"
+#import "Model.h"
 
 @interface ViewController ()
 
@@ -20,11 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // share ViewModel instance intialization
+    // shared ViewModel instance intialization
     self.viewModel = [ViewModel sharedInstanceWithViewController:self];
     
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    
+    // observing the property via ViewModel
+    [self.viewModel.model addObserver:self forKeyPath:@"dataArray" options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew context:nil];
 }
 
 #pragma mark - tableview controller
@@ -47,6 +51,13 @@
     cell.textLabel.text = [self.data objectAtIndex:indexPath.row];
     
     return cell;
+}
+
+#pragma mark - observer
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    NSLog(@"new data: %@", change);
+    self.data = [change objectForKey:@"new"];
+    [self.tableView reloadData];
 }
 
 @end

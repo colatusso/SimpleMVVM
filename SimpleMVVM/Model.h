@@ -10,6 +10,9 @@
 
 @interface Model : NSObject
 
-- (NSArray *)loadData;
++ (id)sharedInstance;
+- (void)loadData;
+
+@property (strong, nonatomic) NSArray *dataArray;
 
 @end

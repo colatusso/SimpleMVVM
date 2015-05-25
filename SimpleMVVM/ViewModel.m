@@ -11,8 +11,7 @@
 
 @interface ViewModel ()
 
-@property (strong, nonatomic) ViewController *viewController;
-@property (strong, nonatomic) Model *model;
+
 
 @end
 
@@ -36,19 +35,13 @@
     
     if (self) {
         self.viewController = viewController;
-        self.model = [[Model alloc] init];
         
-        // loading the data into our main view controller
-        [self setupViewController:self.viewController];
+        // shared instance of the model
+        self.model = [Model sharedInstance];
     }
     
     return self;
 }
-
-- (void) setupViewController:(ViewController *)viewController {
-    viewController.data = [self.model loadData];
-}
-
 
 
 @end

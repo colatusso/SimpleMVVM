@@ -29,13 +29,20 @@
     
     if (self) {
         // do your initialization stuff here
+        [self loadData];
     }
     
     return self;
 }
 
-- (NSArray *)loadData {
-    return @[@"first", @"second", @"third"];
+- (void)loadData {
+    // setting the initial data, observed with NSKeyValueObservingOptionInitial
+    [self setValue:@[@"first", @"second", @"third"] forKey:@"dataArray"];
+    
+    // setting new values after 3 seconds, just for the sake of this example!
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self setValue:@[@"FIRST", @"SECOND", @"THIRD"] forKey:@"dataArray"];
+    });
 }
 
 @end
